@@ -1,0 +1,122 @@
+// --- DATOS DE LOS PUNTOS DE INTERÉS ---
+// Este es un array (una lista) de objetos. Cada objeto representa un lugar en la costa.
+// Contiene: nombre, latitud, longitud, a qué región pertenece y una descripción corta.
+const COASTAL_SPOTS = [
+  { name: "Máncora (Piura)", lat: -4.11, lng: -81.05, region: "norte", desc: "Surf, sol todo el año y vida nocturna." },
+  { name: "Piura (Colán)", lat: -5.19, lng: -80.63, region: "norte", desc: "Playas de Colán y gastronomía norteña." },
+  { name: "Chiclayo (Pimentel)", lat: -6.77, lng: -79.84, region: "norte", desc: "Muelle histórico y olas largas." },
+  { name: "Trujillo (Huanchaco)", lat: -8.11, lng: -79.03, region: "norte", desc: "Caballitos de totora y ceviche." },
+  { name: "Chimbote", lat: -9.07, lng: -78.59, region: "centro", desc: "Bahía y puerto pesquero." },
+  { name: "Lima (Costa Verde)", lat: -12.046, lng: -77.042, region: "centro", desc: "Acantilados, parapente y comida top." },
+  { name: "Paracas (Pisco)", lat: -13.83, lng: -76.25, region: "centro", desc: "Reserva Nacional y fauna marina." },
+  { name: "Mollendo (Arequipa)", lat: -17.02, lng: -72.02, region: "sur", desc: "Playas amplias y aguas tibias en verano." },
+  { name: "Tacna (Boca del Río)", lat: -18.0, lng: -70.25, region: "sur", desc: "Puerta sur del Perú, cerca a Boca del Río." },
+];
+
+
+// --- INICIALIZACIÓN DEL MAPA ---
+// Crea una instancia del mapa en el elemento HTML con el id 'map'.
+// zoomControl: true -> Muestra los botones de + y - para hacer zoom.
+// scrollWheelZoom: true -> Permite hacer zoom con la rueda del ratón.
+const map = L.map('map', { zoomControl: true, scrollWheelZoom: true });
+
+// Añade la capa de mapa base de OpenStreetMap.
+// Esto es lo que permite que se vea el mapa del mundo.
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  maxZoom: 19, // El nivel máximo de zoom permitido.
+  attribution: '&copy; OpenStreetMap contributors' // Créditos que aparecen en el mapa.
+}).addTo(map); // Añade la capa de teselas al mapa que acabamos de crear.
+
+
+// --- CAPAS PARA MARCADORES Y RUTA ---
+// Se crean capas especiales para poder añadir o quitar elementos del mapa fácilmente.
+const markersLayer = L.layerGroup().addTo(map); // Una capa para todos los marcadores (pines).
+const routeLayer = L.polyline([], { weight: 4 }); // Una capa para la línea de la ruta, con un grosor de 4.
+
+
+// --- REFERENCIAS A ELEMENTOS DE LA INTERFAZ (UI) ---
+// Se obtienen los elementos del HTML para poder interactuar con ellos.
+const regionSelect = document.getElementById('regionSelect'); // El menú desplegable para elegir la región.
+const rutaToggle = document.getElementById('rutaToggle');     // El checkbox para mostrar/ocultar la ruta.
+const btnAjustar = document.getElementById('btnAjustar');     // El botón para centrar el mapa.
+
+
+// --- FUNCIONES AUXILIARES ---
+
+// Función para obtener los puntos filtrados según la región seleccionada.
+function getFiltered() {
+  const region = regionSelect.value; // Obtiene el valor actual del menú desplegable.
+  if (region === 'todas') return COASTAL_SPOTS; // Si es "todas", devuelve la lista completa.
+  return COASTAL_SPOTS.filter(s => s.region === region); // Si no, filtra la lista y devuelve solo los de esa región.
+}
+
+// Función para ajustar la vista del mapa a un conjunto de puntos.
+function fitTo(points) {
+  if (!points.length) return; // Si no hay puntos, no hace nada.
+  // Crea un rectángulo imaginario que contiene todos los puntos.
+  const bounds = L.latLngBounds(points.map(p => [p.lat, p.lng]));
+  // Ajusta el mapa a ese rectángulo, con un pequeño margen (pad).
+  map.fitBounds(bounds.pad(0.12));
+}
+
+
+// --- FUNCIÓN PRINCIPAL DE RENDERIZADO ---
+// Esta función se encarga de dibujar y actualizar todo en el mapa.
+function render() {
+  const points = getFiltered(); // Obtiene los puntos que se deben mostrar.
+
+  // 1. Limpiar el mapa antes de dibujar lo nuevo.
+  markersLayer.clearLayers(); // Borra todos los marcadores anteriores.
+  routeLayer.remove();        // Quita la línea de la ruta.
+
+  // 2. Dibujar los marcadores.
+  points.forEach(spot => { // Recorre cada punto que se debe mostrar.
+    const marker = L.marker([spot.lat, spot.lng]); // Crea un marcador en su latitud y longitud.
+    // Le asigna un popup (ventana emergente) con su nombre y descripción.
+    marker.bindPopup(`<strong>${spot.name}</strong><br/><small>${spot.desc}</small>`);
+    markersLayer.addLayer(marker); // Añade el marcador a la capa de marcadores.
+  });
+
+  // 3. Dibujar la ruta (si está activada).
+  if (rutaToggle.checked) { // Comprueba si el checkbox está marcado.
+    // Crea una lista de coordenadas de TODOS los puntos de la costa.
+    const path = COASTAL_SPOTS.map(s => [s.lat, s.lng]);
+    // Actualiza la línea de la ruta con esas coordenadas y la añade al mapa.
+    routeLayer.setLatLngs(path).addTo(map);
+  }
+
+  // 4. Ajustar la vista del mapa.
+  fitTo(points); // Llama a la función para centrar el mapa en los puntos visibles.
+}
+
+
+// --- EVENT LISTENERS (ESCUCHADORES DE EVENTOS) ---
+// Asignan funciones a los eventos de los controles de la UI.
+
+// Cuando el usuario cambia la selección en el menú, se vuelve a renderizar el mapa.
+regionSelect.addEventListener('change', render);
+// Cuando el usuario marca/desmarca el checkbox, se vuelve a renderizar el mapa.
+rutaToggle.addEventListener('change', render);
+// Cuando el usuario hace clic en el botón "Ajustar vista", se centra el mapa en los puntos filtrados.
+btnAjustar.addEventListener('click', () => fitTo(getFiltered()));
+
+
+// --- PRIMERA EJECUCIÓN ---
+// Llama a render() una vez al cargar la página para que el mapa no aparezca vacío.
+render();
+
+
+// --- MEJORA DE ACCESIBILIDAD ---
+// Permite cerrar cualquier popup abierto en el mapa presionando la tecla "Escape".
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') map.closePopup();
+});
+
+
+//
+//
+//
+//
+//
+//
+//

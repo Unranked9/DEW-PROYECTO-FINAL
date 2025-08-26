@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <title>Turismo Perú - Selva</title>
+  <link rel="stylesheet" href="../css/estilos2.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+</head>
+<body>  
+  <header>
+    <div class="header-content">
+    <div class="logo">
+      <a href="./inicio.html"><img class="logo-rumbo" src="../imagenes/logo-rumbo.png" alt=""></a>
+    </div>
+            <div class="buscador">
+        <input type="text" placeholder="Encuentra tu próxima aventura...">
+        <button type="submit"><i class="fas fa-search"></i></button>
+      </div>
+    </div>
+
+    <div class="redes">
+      <span><em>Síguenos en nuestras redes</em></span>
+      <a href="https://www.instagram.com/skyviajesperu/?hl=es-la" target="_blank">
+        <img class="logo-redes" src="../imagenes/instagram.png" alt="instagram"></a>
+      <a href="https://www.facebook.com/groups/112717405410870/?locale=es_LA" target="_blank">
+        <img class="logo-redes" src="../imagenes/facebook.png" alt="facebook"></a>
+      <a href="https://api.whatsapp.com/send/?phone=51920843180&text&type=phone_number&app_absent=0" target="_blank"> 
+        <img class="logo-redes" src="../imagenes/whatsapp.png" alt="WhatsApp"></a>
+    </div>
+    <div id="reloj"></div>
+    <button id="abrir" class="abrir-menu">☰</button>
+  </header>
+
+  <nav id="nav">
+  <!-- Botón cerrar menú (solo en móviles) -->
+  <button id="cerrar" class="cerrar-menu">x</button>
+    <div class="menu-item">
+    <a href="../paginas/inicio.html">Inicio</a>
+      </div>
+  <div class="menu-item">
+    <a href="#">Acerca de</a>
+    <div class="submenu">
+    <div class="submenu-item">
+    <a href="../paginas/quienes somos.html">Quienes Somos</a>
+      </div>
+      </div>
+      </div>
+
+  <div class="menu-item">
+    <a href="#">Regiones</a>
+    <div class="submenu">
+      <div class="submenu-item">
+        <a href="../paginas/Region Costa.html">Costa</a>
+        <div class="submenu-nivel2">
+          <div class="submenu-item">
+            <a href="../paginas/Ica.html">Ica</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="submenu-item">
+        <a href="../paginas/Sierra.html">Sierra</a>
+        <div class="submenu-nivel2">
+          <div class="submenu-item">
+            <a href="../paginas/cusco.html">Cusco</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="submenu-item">
+        <a href="../paginas/selvaperuana.html">Selva</a>
+      </div>
+    </div>
+  </div>
+  <div class="menu-item">
+  <a href="#">Contáctanos</a>
+  <div class="submenu">
+  <a href="../paginas/Formulario.html">Formulario de Contacto</a>
+  </div>
+</div>
+</nav>
+  <main>
+    <section class="izq">
+      <div class="contenido1">
+        <img src="../imagenes/selvaperuana.png" alt="La Selva Peruana">
+        <div>
+          <h2><em>La Selva Peruana</em></h2>
+          <p>La selva peruana es uno de los destinos más fascinantes del país y del mundo. Ocupa más del 60 % del territorio nacional y forma parte de la majestuosa cuenca amazónica. Esta región, dividida en Selva Alta y Selva Baja, ofrece una experiencia única para los viajeros que buscan aventura, biodiversidad y conexión con culturas ancestrales.
+            Desde ciudades vibrantes como Iquitos y Tarapoto hasta reservas naturales como Pacaya Samiria y Tambopata, el turismo en la selva peruana permite navegar por ríos caudalosos, avistar delfines rosados, explorar bosques tropicales y convivir con comunidades indígenas que conservan tradiciones milenarias.
+            Además de su exuberante flora y fauna, la selva ofrece actividades como caminatas ecológicas, paseos en bote, pesca artesanal, observación de aves y turismo vivencial. Es una oportunidad para descubrir la riqueza natural y cultural del Perú profundo.
+          </p>
+        </div>
+      </div>
+    </section>
+<br>
+    <section class="der">
+      <h2><em>Geografía y Clima</em></h2>
+      <div class="contenido2">
+        <p>La selva peruana, que forma parte de la cuenca amazónica, abarca más del 60 % del territorio nacional y se divide en dos zonas principales: la Selva Alta y la Selva Baja. La primera se ubica en las laderas orientales de los Andes y se caracteriza por un terreno montañoso cubierto de vegetación espesa. La segunda, más extensa y de relieve plano, está recorrida por numerosos ríos, siendo el Amazonas el más importante.
+           En cuanto al clima, la región presenta condiciones tropicales, con temperaturas elevadas y alta humedad durante todo el año. La Selva Alta es más fresca y húmeda debido a su altitud, mientras que la Selva Baja experimenta calor constante y lluvias abundantes. Estas características geográficas y climáticas sustentan una de las mayores biodiversidades del planeta, y hacen de la selva peruana un ecosistema vital y único en el mundo.
+        </p>
+        <img src="../imagenes/Geografia.jpg" alt="Geografia">
+      </div>
+    </section>
+
+    <section class="place">
+    <h1 class="selva">Selva Peruana</h1>
+     <aside>
+      <video controls>
+      <source src="../videos/selvaperuana.mp4" type="video/mp4">
+      </video>
+     </aside>
+    </section>
+
+    <section >
+      <h3><em>Especies Emblemáticas</em></h3>
+      <div class="grid">
+        <div>
+          <img src="../imagenes/Mono Araña.png" alt="Mono Araña">
+          <p> <strong> MONO ARAÑA </strong>es un primate ágil y sociable que habita en las copas de los árboles de la selva amazónica peruana. Se caracteriza por sus extremidades largas, su cola prensil que usa como una quinta mano y la ausencia de pulgares. 
+</p>
+          <a class="leer-mas" href="https://es.wikipedia.org/wiki/Ateles">Leer más...</a>
+        </div>
+        <div>
+          <img src="../imagenes/Taricaya.jpeg" alt="Taricaya">
+          <p><strong>TARICAYA</strong> es una tortuga de agua dulce que habita en los ríos y lagos de la Amazonía peruana. Es fácilmente reconocible por su caparazón ovalado de color marrón oscuro y las manchas amarillas en su cabeza. Puede vivir hasta 100 años.
+</p>
+          <a class="leer-mas" href="https://es.wikipedia.org/wiki/Podocnemis_unifilis">Leer más...</a>
+        </div>
+        <div>
+          <img src="../imagenes/Oso Hormiguero Gigante.jpg" alt="Oso hormiguero">
+          <p><strong>OSO HORMIGUERO GIGANTE</strong> es uno de los mamíferos más emblemáticos de la selva peruana. Habita principalmente en los bosques tropicales húmedos y sabanas del oriente del país, donde encuentra su alimento favorito: hormigas y termitas.
+</p>
+          <a class="leer-mas" href="https://es.wikipedia.org/wiki/Myrmecophaga_tridactyla">Leer más...</a>
+        </div>
+        <div>
+          <img src="../imagenes/delfin rosado.jpg" alt="Delfín rosado">
+          <p><strong>DELFÍN ROSADO</strong> también conocido como bufeo o boto, es uno de los animales más emblemáticos y misteriosos de la selva peruana. Habita en los ríos, lagos y bosques inundables de la Amazonía, especialmente en zonas como Iquitos.
+</p>
+          <a class="leer-mas" href="https://es.wikipedia.org/wiki/Inia_geoffrensis">Leer más...</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="navegador" aria-label="Mapa de la región Selva">
+      <header class="map-header">
+        <h2>Mapa: Región Selva del Perú <span class="badge"></span></h2>
+        <div class="controls">
+        <label class="control">
+        <span>Región</span>
+        <select id="regionSelect">
+        <option value="todas">Todas</option>
+        <option value="norte">Selva Norte</option>
+        <option value="centro">Selva Centro</option>
+        <option value="sur">Selva Sur</option>
+        </select>
+        </label>
+
+        <label class="control">
+        <input type="checkbox" id="rutaToggle" checked /> Mostrar ruta de la selva
+        </label>
+
+        <button id="btnAjustar" class="control" title="Ajustar vista a los puntos">Ajustar vista</button>
+        </div>
+        </header>
+
+        <div id="map" role="application" aria-label="Mapa interactivo"></div>
+     </section>
+
+    <section class="reservas">
+      <h4><em>Reservas Naturales</em></h4>
+      <div class="grid">
+        <div>
+          <img src="..//imagenes/Reserva Nacional de Tambopata.jpeg" alt="Reserva 1">
+          <p><strong>RESERVA NACIONAL DE TAMBOPATA</strong> es uno de los tesoros naturales más impresionantes del Perú. Ubicada en el departamento de Madre de Dios, esta área protegida abarca más de 270,000 hectáreas de selva amazónica y fue creada en el año 2000 con el objetivo de conservar su extraordinaria biodiversidad.
+          </p>
+          <a class="leer-mas" href="https://es.wikipedia.org/wiki/Reserva_nacional_Tambopata">Leer más...</a>
+        </div>
+        <div>
+          <img src="..//imagenes/Resera natural de amarakeri.jpg" alt="Reserva 2">
+          <p><strong>RESERVA COMUNAL AMARAKAERI</strong> es un área natural protegida ubicada en el departamento de Madre de Dios, en plena Amazonía peruana. Fue establecida el 9 de mayo de 2002 y abarca más de 402,000 hectáreas de bosques tropicales, ríos y montañas.Esta reserva es única porque fue creada a iniciativa de los pueblos indígenas.
+</p>
+          <a class="leer-mas" href="https://es.wikipedia.org/wiki/Reserva_comunal_Amarakaeri">Leer más...</a>
+        </div>
+        <div>
+          <img src="..//imagenes/reserva nacional de pacaya.jpg" alt="Reserva 3">
+          <p><strong>RESERVA NACIONAL DE PACAYA SAMIRIA</strong> es una de las áreas naturales protegidas más extensas y biodiversas del Perú. Ubicada en el departamento de Loreto, en plena Amazonía peruana, esta reserva abarca más de 2 millones de hectáreas de bosques inundables, ríos y cochas. Su belleza natural la convierten en un tesoro invaluable.
+</p>
+          <a class="leer-mas" href="https://es.wikipedia.org/wiki/Reserva_nacional_Pacaya-Samiria">Leer más...</a>
+        </div>
+      </div>
+      <button class="reservas" onclick="window.location.href='https://plustv.pe/lugaresturisticoslaselvaperuanaparavisitar/'">Ver todas las Reservas</button>
+
+    </section>
+  </main>
+    <footer>
+    <div class="footer-grid">
+      <div>
+        <h4>HORARIOS DE OFICINA</h4>
+        <p>Lunes a Sábado: 9:00AM - 1:00PM<br>
+         | 4:00PM - 8:00PM Domingos: 10:00 AM - 7:00 PM</p>
+        <br>
+        <h4>HORARIOS DE EQUIPO DE VENTAS</h4>
+        <p>Lunes a Sábado: 9:00AM - 1:00PM<br>
+         | 4:00PM - 8:00PM Domingos: 2:00PM - 6:00PM</p>
+      </div>
+      <div>
+        <h4>MÉTODOS DE PAGO</h4>
+        <img src="../imagenes/pagos.png" alt="pagos">
+      </div>
+      <div>
+        <h4>CONTÁCTANOS</h4>
+        <p>
+          +51 999 888 777 |
+          +51 888 777 999
+        </p>
+        <br>
+        <p>
+          turismoperu@gmail.com
+        </p>
+         <br>
+        <p>
+          info@turismoperu.com
+        </p>
+         <br>
+        <p>
+          reservas@turismoperu.com
+        </p>
+      </div>
+    </div>
+  </footer>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="../js/mapa_selva.js"></script>
+  <script src="../js/scripts.js"></script>
+  <script src="../js/volverArriba.js"></script>
+  <script src="../js/buscador.js"></script>
+</body>
+</html>

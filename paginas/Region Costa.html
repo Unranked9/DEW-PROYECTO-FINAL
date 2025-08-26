@@ -1,0 +1,261 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</body>
+  <title>Región Costa - Turismo Perú</title>
+  <link rel="stylesheet" href="../css/estilos2.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+    <div class="logo">
+      <a href="./inicio.html"><img class="logo-rumbo" src="../imagenes/logo-rumbo.png" alt=""></a>
+    </div>
+            <div class="buscador">
+        <input type="text" placeholder="Encuentra tu próxima aventura...">
+        <button type="submit"><i class="fas fa-search"></i></button>
+      </div>
+    </div>
+
+    <div class="redes">
+      <span><em>Síguenos en nuestras redes</em></span>
+      <a href="https://www.instagram.com/skyviajesperu/?hl=es-la" target="_blank">
+        <img class="logo-redes" src="../imagenes/instagram.png" alt="instagram"></a>
+      <a href="https://www.facebook.com/groups/112717405410870/?locale=es_LA" target="_blank">
+        <img class="logo-redes" src="../imagenes/facebook.png" alt="facebook"></a>
+      <a href="https://api.whatsapp.com/send/?phone=51920843180&text&type=phone_number&app_absent=0" target="_blank"> 
+        <img class="logo-redes" src="../imagenes/whatsapp.png" alt="WhatsApp"></a>
+    </div>
+    <div id="reloj"></div>
+    <button id="abrir" class="abrir-menu">☰</button>
+  </header>
+
+  <nav id="nav">
+  <!-- Botón cerrar menú (solo en móviles) -->
+  <button id="cerrar" class="cerrar-menu">x</button>
+    <div class="menu-item">
+    <a href="../paginas/inicio.html">Inicio</a>
+      </div>
+  <div class="menu-item">
+    <a href="#">Acerca de</a>
+    <div class="submenu">
+    <div class="submenu-item">
+    <a href="../paginas/quienes somos.html">Quienes Somos</a>
+      </div>
+      </div>
+      </div>
+
+  <div class="menu-item">
+    <a href="#">Regiones</a>
+    <div class="submenu">
+      <div class="submenu-item">
+        <a href="../paginas/Region Costa.html">Costa</a>
+        <div class="submenu-nivel2">
+          <div class="submenu-item">
+            <a href="../paginas/Ica.html">Ica</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="submenu-item">
+        <a href="../paginas/Sierra.html">Sierra</a>
+        <div class="submenu-nivel2">
+          <div class="submenu-item">
+            <a href="../paginas/cusco.html">Cusco</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="submenu-item">
+        <a href="../paginas/selvaperuana.html">Selva</a>
+      </div>
+    </div>
+  </div>
+  <div class="menu-item">
+  <a href="#">Contáctanos</a>
+  <div class="submenu">
+  <a href="../paginas/Formulario.html">Formulario de Contacto</a>
+  </div>
+</div>
+</nav>
+
+
+  <main>
+    <section class="izq">
+      <div class="contenido1">
+        <img src="../imagenes/Costa Peruana.jpg" alt="La Costa Peruana">
+       <div>
+      <h2><em>La Costa Peruana</em></h2>
+      <p>
+        La costa peruana es una de las tres regiones naturales del Perú y se extiende a lo largo de más de 3,000 kilómetros 
+        frente al océano Pacífico. Comprende una franja estrecha de territorio que abarca desiertos, valles fértiles y playas.
+        A pesar de su clima mayormente árido y seco, cuenta con importantes ríos que bajan desde los Andes y hacen posible la 
+        agricultura en valles como los de Ica, Piura y La Libertad.
+        Es la región más poblada del país y donde se concentra la mayor parte de la actividad económica, comercial e industrial,
+        incluyendo la capital, Lima. La costa peruana también destaca por su gran riqueza marina,gracias a la corriente de 
+        Humboldt, que favorece la pesca. Además, ofrece una variada oferta turística con playas, ciudades históricas, 
+        reservas naturales y deliciosa gastronomía.
+     </p>
+       </div>
+    </section>
+</div>
+<br>
+    <section class="der">
+      <h2><em>Geografía y Clima</em></h2>
+      <div class="contenido2">
+        <p>
+          La costa peruana es una estrecha franja de tierra ubicada entre el océano Pacífico y la cordillera de los Andes. 
+          Se extiende a lo largo de aproximadamente 2,500 kilómetros, desde Tumbes en el norte hasta Tacna en el sur. 
+          Su relieve es mayormente plano o con ligeras ondulaciones, aunque en algunas zonas presenta desiertos, valles 
+          fértiles y colinas. A pesar de estar junto al mar, el clima en la costa es árido y templado debido a la influencia 
+          de la corriente marina de Humboldt. Las lluvias son escasas durante casi todo el año, especialmente en la 
+          zona centro-sur. En el norte, sin embargo, pueden presentarse lluvias más intensas durante fenómenos como El Niño.
+          Las temperaturas varían entre los 15 °C y 30 °C dependiendo de la estación y la región, siendo más cálidas en el norte 
+          y más frescas en el sur. La neblina o “garúa” es común en invierno, especialmente en ciudades como Lima.
+        </p>
+        <img src="../imagenes/geografia costa peruana.png" alt="Geografia costa peruana">
+      </div>
+    </section>
+
+    <section >
+      <h3><em>Especies Emblemáticas</em></h3>
+      <div class="grid">
+        <div>
+          <img src="../imagenes/animal1.jpg" alt="Mono Araña">
+          <p> <strong>PERRO PERUANO</strong>
+          es una raza ancestral del Perú, famosa por su piel desnuda y suave.
+          Es inteligente, cariñoso y muy protector con su familia. Ha sido representado 
+          en cerámicas de culturas precolombinas y hoy es considerado patrimonio cultural del Perú.</p>
+        </div>
+        <div>
+          <img src="../imagenes/animal2.jpg" alt="Taricaya">
+          <p><strong>cormorán guanay</strong>
+          Es una especie nativa de la costa del Perú y se le encuentra en grandes colonias 
+          sobre acantilados o islas rocosas. Es muy importante ecológicamente porque produce
+          guano, un fertilizante natural muy valorado. Tiene plumaje negro con el pecho blanco,
+          ojos rojos y una zona facial de color rojo alrededor del pico.</p>
+        </div>
+        <div>
+          <img src="../imagenes/animal3.jpg" alt="Oso hormiguero">
+          <p><strong>PINGUINO DE HUMBOLDT</strong>
+          es una especie que vive en la costa del Perú y Chile. Se le reconoce por su pecho
+          blanco con una franja negra en forma de herradura. Habita en islas y zonas rocosas, 
+          y se alimenta de peces como las anchovetas. Está en peligro debido a la pesca excesiva y 
+          la pérdida de su hábitat. Es una especie protegida en el Perú.</p>
+        </div>
+        <div>
+          <img src="../imagenes/animal4.jpg" alt="Delfín rosado">
+          <p><strong>GAVIOTA PERUANA</strong>
+           también conocida como gaviota gris, es una especie que habita en la costa del Perú. 
+           Tiene el cuerpo gris oscuro, patas rojas y un pico rojo con punta negra. Se alimenta 
+           de peces y restos marinos. Es muy común en playas, puertos y mercados costeros, y 
+           forma parte del ecosistema marino del país.</p>
+        </div>
+      </div>
+    </section>
+
+<!--navegador-->>
+    <section id="navegador" aria-label="Mapa de la región costera">
+      <header class="map-header">
+        <h2>Mapa: Región Costera del Perú <span class="badge"></span></h2>
+        <div class="controls">
+        <label class="control">
+        <span>Región</span>
+        <select id="regionSelect">
+        <option value="todas">Todas</option>
+        <option value="norte">Costa norte</option>
+        <option value="centro">Costa centro</option>
+        <option value="sur">Costa sur</option>
+        </select>
+        </label>
+
+        <label class="control">
+        <input type="checkbox" id="rutaToggle" checked /> Mostrar ruta costera
+        </label>
+
+        <button id="btnAjustar" class="control" title="Ajustar vista a los puntos">Ajustar vista</button>
+        </div>
+        </header>
+
+        <div id="map" role="application" aria-label="Mapa interactivo"></div>
+     </section>
+
+
+
+
+    <section class="reservas">
+      <h4><em>Reservas Naturales</em></h4>
+      <div class="grid">
+        <div>
+          <img src="../imagenes/Reserva Nacional de Tambopata.jpeg" alt="Reserva 1">
+          <p><strong>RESERVA NACIONAL DE PARACAS</strong> 
+            La Reserva Nacional de Paracas protege una parte del mar y desierto costero del sur del Perú.
+            Es un lugar ideal para observar aves marinas, lobos marinos y formaciones naturales como La Catedral. 
+            Además, resguarda restos arqueológicos de la antigua cultura Paracas.
+            </p>
+          <a class="leer-mas" href="https://es.wikipedia.org/wiki/Reserva_nacional_Tambopata">Leer más...</a>
+        </div>
+        <div>
+          <img src="../imagenes/Resera natural de amarakeri.jpg" alt="Reserva 2">
+          <p><strong>RESERVA COMUNAL AMARAKAERI</strong> es un área natural protegida ubicada en el departamento de Madre de Dios, en plena Amazonía peruana. Fue establecida el 9 de mayo de 2002 y abarca más de 402,000 hectáreas de bosques tropicales, ríos y montañas.Esta reserva es única porque fue creada a iniciativa de los pueblos indígenas.
+</p>
+          <a class="leer-mas" href="https://es.wikipedia.org/wiki/Reserva_comunal_Amarakaeri">Leer más...</a>
+        </div>
+        <div>
+          <img src="../imagenes/reserva nacional de pacaya.jpg" alt="Reserva 3">
+          <p><strong>RESERVA NACIONAL DE PACAYA SAMIRIA</strong> es una de las áreas naturales protegidas más extensas y biodiversas del Perú. Ubicada en el departamento de Loreto, en plena Amazonía peruana, esta reserva abarca más de 2 millones de hectáreas de bosques inundables, ríos y cochas. Su belleza natural la convierten en un tesoro invaluable.
+</p>
+          <a class="leer-mas" href="https://es.wikipedia.org/wiki/Reserva_nacional_Pacaya-Samiria">Leer más...</a>
+        </div>
+      </div>
+      <button class="reservas" onclick="window.location.href='https://plustv.pe/lugaresturisticoslaselvaperuanaparavisitar/'">Ver todas las Reservas</button>
+    </section>
+  </main>
+
+    <footer>
+    <div class="footer-grid">
+      <div>
+        <h4>HORARIOS DE OFICINA</h4>
+        <p>Lunes a Sábado: 9:00AM - 1:00PM<br>
+         | 4:00PM - 8:00PM Domingos: 10:00 AM - 7:00 PM</p>
+        <br>
+        <h4>HORARIOS DE EQUIPO DE VENTAS</h4>
+        <p>Lunes a Sábado: 9:00AM - 1:00PM<br>
+         | 4:00PM - 8:00PM Domingos: 2:00PM - 6:00PM</p>
+      </div>
+      <div>
+        <h4>MÉTODOS DE PAGO</h4>
+        <img src="../imagenes/pagos.png" alt="pagos">
+      </div>
+      <div>
+        <h4>CONTÁCTANOS</h4>
+        <p>
+          +51 999 888 777 |
+          +51 888 777 999
+        </p>
+        <br>
+        <p>
+          turismoperu@gmail.com
+        </p>
+         <br>
+        <p>
+          info@turismoperu.com
+        </p>
+         <br>
+        <p>
+          reservas@turismoperu.com
+        </p>
+      </div>
+    </div>
+  </footer>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="../js/scripts4.js"></script>
+  <script src="../js/volverArriba.js"></script>
+  <script src="../js/scripts.js"></script>
+</body>
+</html>

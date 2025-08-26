@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <title>Turismo Perú - Sierra</title>
+    <link rel="stylesheet" href="../css/estilos2.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <style>
+      /* Estilos específicos para las imágenes de la página Sierra */
+      .izq .contenido1 img {
+        width: 200% !important; /* Se usa !important para asegurar la sobreescritura del estilo problemático de 620% */
+        height: 390px;
+        object-fit: cover;
+      }
+      .der .contenido2 img {
+        width: 200%;
+        height: 390px;
+      }
+    </style>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+    <div class="logo">
+      <a href="./inicio.html"><img class="logo-rumbo" src="../imagenes/logo-rumbo.png" alt=""></a>
+    </div>
+            <div class="buscador">
+        <input type="text" placeholder="Encuentra tu próxima aventura...">
+        <button type="submit"><i class="fas fa-search"></i></button>
+      </div>
+    </div>
+
+    <div class="redes">
+      <span><em>Síguenos en nuestras redes</em></span>
+      <a href="https://www.instagram.com/skyviajesperu/?hl=es-la" target="_blank">
+        <img class="logo-redes" src="../imagenes/instagram.png" alt="instagram"></a>
+      <a href="https://www.facebook.com/groups/112717405410870/?locale=es_LA" target="_blank">
+        <img class="logo-redes" src="../imagenes/facebook.png" alt="facebook"></a>
+      <a href="https://api.whatsapp.com/send/?phone=51920843180&text&type=phone_number&app_absent=0" target="_blank"> 
+        <img class="logo-redes" src="../imagenes/whatsapp.png" alt="WhatsApp"></a>
+    </div>
+    <div id="reloj"></div>
+    <button id="abrir" class="abrir-menu">☰</button>
+  </header>
+
+  <nav id="nav">
+  <!-- Botón cerrar menú (solo en móviles) -->
+  <button id="cerrar" class="cerrar-menu">x</button>
+    <div class="menu-item">
+    <a href="../paginas/inicio.html">Inicio</a>
+      </div>
+  <div class="menu-item">
+    <a href="#">Acerca de</a>
+    <div class="submenu">
+    <div class="submenu-item">
+    <a href="../paginas/quienes somos.html">Quienes Somos</a>
+      </div>
+      </div>
+      </div>
+
+  <div class="menu-item">
+    <a href="#">Regiones</a>
+    <div class="submenu">
+      <div class="submenu-item">
+        <a href="../paginas/Region Costa.html">Costa</a>
+        <div class="submenu-nivel2">
+          <div class="submenu-item">
+            <a href="../paginas/Ica.html">Ica</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="submenu-item">
+        <a href="../paginas/Sierra.html">Sierra</a>
+        <div class="submenu-nivel2">
+          <div class="submenu-item">
+            <a href="../paginas/cusco.html">Cusco</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="submenu-item">
+        <a href="../paginas/selvaperuana.html">Selva</a>
+      </div>
+    </div>
+  </div>
+  <div class="menu-item">
+  <a href="#">Contáctanos</a>
+  <div class="submenu">
+  <a href="../paginas/Formulario.html">Formulario de Contacto</a>
+  </div>
+</div>
+</nav>
+
+<main>
+    <section class="izq">
+        <div class="contenido1">
+            <img src="../Imagenes/sierra montañas.jfif" alt="La Sierra Peruana">
+            <div>
+                <h2><em>La Sierra Peruana</em></h2>
+                <p>
+                    En el Perú, la región de la Sierra, también llamada Región Alto andina o Serranía es la región montañosa y de 
+                    altiplanicies del país constituida por las tierras medias y altas de la cordillera de los Andes. Se extiende a 
+                    lo largo del país de norte a sur y dentro de la geografía del Perú constituye una región geográfica tradicional.
+                    <br><br>
+                    Las principales actividades económicas de la sierra peruana son la agricultura, ganadería, minería, artesanía y 
+                    turismo. La agricultura se centra en cultivos como la papa, maíz, habas y otros tubérculos, mientras que la ganadería 
+                    incluye la cría de vacunos, ovinos y camélidos. La minería es importante, con extracción de oro, plata, cobre, entre 
+                    otros. Además, la artesanía y el turismo son actividades relevantes en la región. 
+                    <br><br>
+                    Los lugareños viven mayormente del trabajo de la tierra y del ganado. Traen consigo una fuerte tradición en la 
+                    artesanía y las obras manuales.
+                    <br><br>
+                    Lo mejor de la sierra peruana es que no solo te muestra bellos paisajes, sino también historia. Y eso es gracias a 
+                    los incas, quienes fueron los que crearon fortalezas, esculturas o cerámicas como parte de su cultura.
+                    <br><br>
+                    En esta sección, destacamos tres lugares notables que no debes dejar de visitar: el esplendoroso Cusco con sus 
+                    complejos y santuarios arqueologicos, la bella Arequipa, donde encontrarás hermosa arquitectura colonial y valles 
+                    interandinos de espectacular belleza paisajistica donde el contacto con la natualeza será una experiencia inolvidable
+                    y por ultimo y no menos deslumbrante; Puno que te ofrece mágicos paisajes, arquitectura colonial de sus iglesias y 
+                    complejos arqueologicos a orillas del lago navegable mas alto del planeta.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="der">
+      <h2><em>Geografía y clima.</em></h2>
+      <div class="contenido2">
+        <p>
+                            La geografía de la sierra peruana se caracteriza por ser una región montañosa ubicada en la Cordillera de los
+                            Andes, que se extiende a lo largo del país de norte a sur. Esta región se encuentra entre la costa y la selva, y 
+                            limita al norte con la región interandina de Ecuador y al sur con las regiones andinas de Bolivia y Chile. 
+                            <br><br>
+                            El clima de los andes está relacionado con la altitud, y la cercanía a la costa desértica o a la selva húmeda.
+                            En general se considera que el clima serrano característico va de templado a frío, con aire muy seco y tiene 
+                            dos fases estacionales, una lluviosa entre noviembre y marzo, y una seca de abril a octubre. El piso nival de 
+                            congelación permanente comienza a los 4800 m s. n. m. como promedio, por lo que hay numerosas montañas y cordilleras 
+                            nevadas. Sin embargo, el calentamiento global está variando estas condiciones, por lo que el hielo por encima 
+                            de los 5000 m s. n. m. está en retroceso.
+                            <br><br>
+                            El clima es frío, con alta sequedad atmosférica y variaciones térmicas. El clima frío prevalece en este nivel, 
+                            con vegetación escasa y la presencia de la puna, caracterizada por pastizales y plantas adaptadas a condiciones 
+                            extremas. Altitud: Entre 4.000 y 5.000 m.s.n.m. 
+                            Vientos: Entre 15 y 25 km/h.
+        </p>
+        <img src="../Imagenes/llama.jfif" alt="Llama en la sierra">
+      </div>
+    </section>
+
+    <section>
+      <h3><em>ESPECIES EMBLEMÁTICAS</em></h3>
+      <div class="grid">
+        <div>
+          <img src="../Imagenes/camélidos.jpg" alt="Camélidos sudamericanos">
+          <p><strong>Camélidos sudamericanos.</strong><br>Los auquénidos (tribu Lamini), también conocidos como pipis o lamoides, son camélidos nativos de Sudamérica. El término auquénido proviene del antiguo género Auchenia, que a su vez se deriva del griego antiguo αὐχήν (aujén, 'cuello'). Esta tribu comprende dos géneros, Lama y Vicugna, y cuatro especies exclusivas de América del Sur: dos salvajes, el guanaco y la vicuña, y dos domesticadas: la alpaca y la llama.</p>
+          <a class="leer-mas" href="#">Leer más...</a>
+        </div>
+        <div>
+          <img src="../Imagenes/puma.jfif" alt="Puma andino">
+          <p><strong>Puma andino.</strong><br>El puma, león de montaña o león americano (Puma concolor) es un mamífero carnívoro de la familia Felidae nativo de América. Este felino vive en más lugares que cualquier otro mamífero silvestre terrestre del continente, ya que su área de distribución se extiende desde el Yukón, en Canadá, hasta el sur de la cordillera de los Andes y la Patagonia en América del Sur. Además, el puma es territorial y tiene una baja densidad de población.</p>
+          <a class="leer-mas" href="#">Leer más...</a>       
+        </div>
+        <div>
+          <img src="../Imagenes/zorro.jfif" alt="Zorro andino">
+          <p><strong>Zorro andino.</strong><br>Lycalopex culpaeus, conocido como culpeo, zorro culpeo, raposa colorada o zorro colorado (norte de Ecuador), es el segundo cánido viviente más grande de Sudamérica, solo superado por el lobo de crin o aguará guazú. Tanto las patas como la cabeza son rojizas; el vientre, cuello y boca, blancos; y el lomo, gris rayado de negro. La cola está muy poblada de pelos grises, los cuales se tornan negros hacia la punta. Existen avistamientos de ejemplares completamente albinos.</p>
+          <a class="leer-mas" href="#">Leer más...</a>        
+        </div>
+        <div>
+          <img src="../Imagenes/condor.jfif" alt="Cóndor andino">
+          <p><strong>Condor andino.</strong><br>Es el ave voladora más grande del mundo por la medida combinada de peso (15 kg) y envergadura máxima (3,3 m). Generalmente se le considera el ave rapaz más grande del mundo. Tiene plumaje negro con un collar de plumas blancas que rodea la base del cuello y, especialmente en el macho, grandes manchas blancas en las alas. La cabeza y el cuello casi no tienen plumas y son de un color rojo apagado, que puede enrojecerse y, por lo tanto, cambiar de color en respuesta al estado emocional del ave. El macho tiene una barba en el cuello y una gran cresta o carúncula de color rojo oscuro en la coronilla. La hembra es más pequeña que el macho, una excepción a la regla entre las aves de presa.</p>
+          <a class="leer-mas" href="#">Leer más...</a>        
+        </div>
+      </div>
+    </section>
+
+    <section id="navegador" aria-label="Mapa de la región Sierra">
+      <header class="map-header">
+        <h2>Mapa: Región Sierra del Perú <span class="badge"></span></h2>
+        <div class="controls">
+        <label class="control">
+        <span>Región</span>
+        <select id="regionSelect">
+        <option value="todas">Todas</option>
+        <option value="norte">Sierra Norte</option>
+        <option value="centro">Sierra Centro</option>
+        <option value="sur">Sierra Sur</option>
+        </select>
+        </label>
+
+        <label class="control">
+        <input type="checkbox" id="rutaToggle" checked /> Mostrar ruta de la sierra
+        </label>
+
+        <button id="btnAjustar" class="control" title="Ajustar vista a los puntos">Ajustar vista</button>
+        </div>
+        </header>
+
+        <div id="map" role="application" aria-label="Mapa interactivo"></div>
+     </section>
+
+    <section class="reservas">
+      <h4><em>RESERVAS NATURALES</em></h4>
+      <div class="grid">
+        <div>
+          <img src="../Imagenes/salinas.jfif" alt="Reserva Nacional de Salinas y Aguada Blanca">
+          <p><strong>La Reserva Nacional de Salinas y Aguada Blanca.</strong><br>La Reserva Nacional de Salinas y Aguada Blanca se ubica en territorios de las provincias arequipeñas de Arequipa, Caylloma, así como de General Sánchez Cerro, en la región Moquegua. Su extensión es de 366,936 hectáreas. La altitud promedio es de 4,300 metros sobre el nivel del mar. La zona comprende varios volcanes y nevados como el Misti, el Pichu Pichu, el Chachani, el Tacune y el Ubinas, montañas y lagunas, entre ellas la laguna de Salinas. La laguna Salinas destaca por ser de agua salobre y estar rodeada de turberas y bofedales. Allí albergas variedades de flamenco.</p>
+          <a class="leer-mas" href="#">Leer más...</a>        
+        </div>
+        <div>
+          <img src="../Imagenes/Reserva_Nacional_Pampa_Galeras2.jpg" alt="Reserva nacional Pampa Galeras-Bárbara d'Achille">
+          <p><strong>La reserva nacional Pampa Galeras-Bárbara d'Achille.</strong><br>La reserva nacional Pampa Galeras-Bárbara d'Achille es un área protegida peruana ubicada en la zona altoandina de Lucanas, departamento de Ayacucho, Perú. El área está principal dedicado como centro de recuperación y conservación de la vicuña. El paisaje está dominado por el ichu. Fue creada el 18 de mayo de 1967. La Reserva Nacional está bajo la administración del Servicio Nacional de Áreas Naturales Protegidas. La reserva se llama en honor a Bárbara D´Achille.</p>
+          <a class="leer-mas" href="#">Leer más...</a>        
+        </div>
+        <div>
+          <img src="../Imagenes/reserva-nacional-de-junin.jpg" alt="Reserva Nacional de Junín">
+          <p><strong>La Reserva Nacional de Junín.</strong><br>es un área protegida por el Estado. Está ubicada en los Andes centrales (en la meseta de Bombón), en los distritos de Carhuamayo, Ondores y Junín del departamento de Junín y en los distritos de Ninacaca y Vicco del departamento de Pasco, Perú. Este importante lugar se sitúa en la pampa de Junín (también conocida como altiplano de Bombón), en las inmediaciones del lugar de la histórica batalla de Junín a 4,100 m s. n. m. Tiene una extensión de 53 000 ha.</p>
+          <a class="leer-mas" href="#">Leer más...</a>        
+        </div>
+      </div>
+        <button class="reservas">Ver todas las reservas</button>
+    </section>
+</main> 
+
+<footer>
+    <div class="footer-grid">
+      <div>
+        <h4>HORARIOS DE OFICINA</h4>
+        <p>Lunes a Sábado: 9:00AM - 1:00PM<br>
+         | 4:00PM - 8:00PM Domingos: 10:00 AM - 7:00 PM</p>
+        <br>
+        <h4>HORARIOS DE EQUIPO DE VENTAS</h4>
+        <p>Lunes a Sábado: 9:00AM - 1:00PM<br>
+         | 4:00PM - 8:00PM Domingos: 2:00PM - 6:00PM</p>
+      </div>
+      <div>
+        <h4>MÉTODOS DE PAGO</h4>
+        <img src="../imagenes/pagos.png" alt="pagos">
+      </div>
+      <div>
+        <h4>CONTÁCTANOS</h4>
+        <p>
+          +51 999 888 777 |
+          +51 888 777 999
+        </p>
+        <br>
+        <p>
+          turismoperu@gmail.com
+        </p>
+         <br>
+        <p>
+          info@turismoperu.com
+        </p>
+         <br>
+        <p>
+          reservas@turismoperu.com
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="../js/mapa_sierra.js"></script>
+  <script src="../js/scripts.js"></script>
+  <script src="../js/volverArriba.js"></script>
+  <script src="../js/buscador.js"></script>
+</body>
+</html>
